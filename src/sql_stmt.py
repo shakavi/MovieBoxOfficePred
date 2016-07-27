@@ -14,7 +14,7 @@ CREATE_MOVIE_TBL = '''CREATE TABLE movies (
 INSERT_INTO_MOVIES = '''
 INSERT INTO moviesattr(movie_id, title, release_date,
  runtimes, country, languages, Budget, rating, mpaa, plot)
-VALUES(?, ?, ?, ?, ? , ?, ?, ?, ?, ?)'''
+VALUES(?, ?, ?, ?, ? , ?, ?, ?, ?, ?);'''
 
 UPDATE MOVIES = """
 UPDATE movies SET plot = %s WHERE movie_id = %s"""

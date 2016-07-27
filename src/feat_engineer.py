@@ -25,3 +25,4 @@ def create_movie_list():
 
         if ((len(date)) == 3 and (int(date[2]) in range(2006, 2016))):
             movies_in_given_range.append(k)
+            # put this in the database

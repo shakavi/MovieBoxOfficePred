@@ -8,3 +8,9 @@ IMDbPY itself can be installed through easy_install and pip,
 with - respectively - these commands (as root):
   easy_install IMDbPY
   pip install IMDbPY
+
+
+http://imdbpy.sourceforge.net/docs/README.sqldb.txt
+
+
+http://imdbpy.sourceforge.net/docs/README.sqldb.txt

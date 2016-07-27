@@ -1,0 +1,7 @@
+*-checkpoint.ipynb
+*.keys
+*.pyc
+*.DS_Store
+*.jpg
+*.csv
+*.ipynb

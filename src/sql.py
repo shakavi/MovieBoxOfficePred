@@ -1,15 +1,29 @@
 #!/usr/bin/python
+"""Module accesing psql database and modifying it."""
 import psycopg2
 import sql_stmt
 
 
 class MovieDB():
-    def __init__(self):
+    """Class for psql operations."""
+
+    def __init__(self, config):
+    """ Initialization method.
+
+     Args:
+         config: desc.
+
+     Returns:
+         return_value: desc.
+
+     """
         # read database, user, password, host etc from the config file
         try:
-            self.conn = psycopg2.connect(database="testdb", user="postgres",
-                                     password="pass123", host="0.0.0.1",
-                                     port="5432")
+            self.conn = psycopg2.connect(database=config['database'],
+                                         user=config['user'],
+                                         password=config['password'],
+                                         host=config['host'],
+                                         port=config['port'])
         except:
             print "I am unable to connect to the database"
 
@@ -22,7 +36,7 @@ class MovieDB():
     def execute_command(self, command):
         cur = self.conn.cursor()
         self.cur.execute(command)
-        print "Table created successfully"
+        print "SUCCESS"
         self.conn.commit()
         cur.close()
 
@@ -37,6 +51,18 @@ class MovieDB():
     def query_results(rows):
         for row in rows:
             print row
+
+def insert_into_table(self, insert_stmt, insert_values_l):
+    try:
+        cur = self.conn.cursor()
+        # execute the INSERT statement
+        cur.executemany(insert_stmt, vendor_list)
+        # commit the changes to the database
+        self.conn.commit()
+        # close communication with the database
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
 
 #INSERT_IN_MOVIEDB
     def insert_attr_command(self, movie_id, dict_attr):

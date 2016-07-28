@@ -1,11 +1,14 @@
--- Filename: create_movie_db.sql 
+-- Filename: create_movie_db.sql
+--
+-- Script for creating tables for MovieBoxOfficePred
+--
+
 
 --
 -- Name: movies; Type: TABLE; Schema: public; Owner: shakavi;
 --
 
-
-CREATE TABLE movies(
+CREATE TABLE IF NOT EXISTS movies(
     movie_id   serial PRIMARY KEY,
     title      text NOT NULL DEFAULT "None",
     release_date date,
@@ -23,7 +26,7 @@ CREATE TABLE movies(
 -- Name: moviesattr; Type: TABLE; Schema: public; Owner: shakavi;
 --
 
-CREATE TABLE moviesattr(
+CREATE TABLE  IF NOT EXISTS moviesattr(
     movie_id  int REFERENCES movies (movie_id),
     attr_key  text NOT NULL,
     attr_value text NOT NULL,
@@ -34,7 +37,7 @@ CREATE TABLE moviesattr(
 -- Name: box_office_col; Type: TABLE; Schema: public; Owner: shakavi;
 --
 
-CREATE TABLE box_office_col(
+CREATE TABLE  IF NOT EXISTS box_office_col(
     movie_id            int REFERENCES movies (movie_id),
     week_number         numeric NOT NULL DEFAULT 0,
     average_per_theatre numeric NOT NULL DEFAULT 0,

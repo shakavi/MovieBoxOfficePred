@@ -5,3 +5,5 @@
 *.jpg
 *.csv
 *.ipynb
+*.ini
+*addition_for_project
